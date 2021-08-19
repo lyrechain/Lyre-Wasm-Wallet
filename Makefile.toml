@@ -1,0 +1,36 @@
+[tasks.default]
+clear = true
+dependencies = ["build"]
+
+[tasks.build]
+command = "wasm-pack"
+install_crate = "wasm-pack"
+args = ["build", "--dev", "--target", "web", "--out-name", "wasm", "--out-dir", "./resources/pkg"]
+watch = { ignore_pattern = "resources/*" }
+
+[tasks.build_fmt]
+command = "wasm-pack"
+install_crate = "wasm-pack"
+args = ["build", "--dev", "--target", "web", "--out-name", "wasm", "--out-dir", "./resources/pkg"]
+watch = { ignore_pattern = "resources/*" }
+dependencies = ["format"]
+
+[tasks.serve]
+command = "miniserve"
+#install_crate = "miniserve"
+args = ["-p", "5500", "./resources", "--index", "index.html"]
+
+[tasks.check]
+command = "cargo"
+install_crate = "cargo-deny"
+args = ["deny", "check"]
+dependencies = ["fetch"]
+
+[tasks.fetch]
+command = "cargo"
+args = ["check"]
+
+[tasks.format]
+command = "cargo"
+install_crate = "cargo-fmt"
+args = ["fmt"]
