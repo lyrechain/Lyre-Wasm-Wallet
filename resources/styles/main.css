@@ -1,0 +1,89 @@
+body {
+    font-family: "pompiere_regular", "sans-serif";
+    background: #ffffff !important;
+}
+
+#hero-root {
+    background-image: url("../assets/hero-bg-plain.svg");
+}
+
+#hero-root a {
+    background: transparent;
+    color: #00ffff;
+    font-size: 100% !important;
+    border: 1px solid #00ffff;
+    padding: 10px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 1);
+}
+
+
+#hero-root a:hover {
+    background: transparent;
+    color: #8a38e2;
+    font-size: 100% !important;
+    border: 1px solid #8a38e2;
+}
+#hero-social svg {
+    width: 20px !important;
+}
+#hero-social a {
+    border: none ;
+    box-shadow: none ;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+@media (min-width: 768px) {
+    #hero-root img {
+        width: 40%;
+    }
+    .img-normal img {
+        width: 100% !important;
+    }
+}
+
+
+#hero {
+    background-image: url("../assets/hero-bg-plain.svg");
+}
+.color-secondary {
+    color: #00ffff;
+}
+.color-tertiary {
+    color: #8a38e2;
+}
+.white {
+    color: #ffffff;
+}
+
+.compagnon-roman {
+    font-family: "compagnonroman", "Sans-serif";
+}
+.fontin-regular {
+    font-family: "fontinregular", "Sans-serif";
+}
+
+.pompiere-regular {
+    font-family: "pompiere_regular", "Sans-serif";
+    font-size: 130% !important;
+}
+
+.dadada {
+    color: #dadada;
+}
+.weight-100 {
+    font-weight: 100 !important;
+}
+.fixed-max-width-500 {
+    max-width: 500px !important;
+}
+.fixed-max-width-368 {
+    max-width: 500px !important;
+}
+.l-shell {
+    border: 2px solid #8a38e2;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #000000;
+}
