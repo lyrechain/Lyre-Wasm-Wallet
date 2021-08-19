@@ -1,0 +1,49 @@
+[package]
+name = "lyre-wasm"
+version = "0.1.0"
+authors = ["Lyre Chain Developers <mail@lyrechain.ch>"]
+edition = "2018"
+license = "LicenseRef-BSL-v1.1"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2.71", features = ["serde-serialize"] }
+wee_alloc = "0.4.5"
+console_log = "0.2.0"
+log = "0.4.14"
+console_error_panic_hook = "0.1.6"
+mogwai = "0.4.0"
+serde = { version = "1.0.127", features = ["derive"] }
+wasm-bindgen-futures = "0.4.25"
+json = "0.12.4"
+getrandom = { version = "0.2.3", features = ["js"] }
+serde_json = "1.0.66"
+surf = { version = "2.2.0", default-features = false, features = [
+    "wasm-client",
+    "default-client",
+] }
+
+[dependencies.web-sys]
+version = "^0.3"
+# Add more web-sys API's as you need them
+features = [
+    "HtmlInputElement",
+    "HashChangeEvent",
+    "Headers",
+    "Request",
+    "RequestInit",
+    "RequestMode",
+    "Response",
+    "Window",
+    "ReadableStream",
+]
+
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
