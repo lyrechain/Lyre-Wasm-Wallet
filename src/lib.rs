@@ -22,7 +22,8 @@ pub fn main(parent_id: Option<String>) -> Result<(), JsValue> {
     panic::set_hook(Box::new(console_error_panic_hook::hook));
     console_log::init_with_level(Level::Trace).unwrap();
 
-    wasm_bindgen_futures::spawn_local(crate::offchain::airdrop());
+    //TODO
+    //wasm_bindgen_futures::spawn_local(crate::offchain::airdrop());
 
     let gizmo = Gizmo::from(App {
         route: Route::WalletCheckpoint,
