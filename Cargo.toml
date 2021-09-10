@@ -27,6 +27,11 @@ surf = { version = "2.2.0", default-features = false, features = [
     "wasm-client",
     "default-client",
 ] }
+ed25519-dalek = { features = ["u32_backend", "batch_deterministic"], default-features = false, version = "1.0.1" }
+rand = { version = "0.7", default-features = false, features = [
+    "wasm-bindgen",
+] }
+bs58 = "0.4.0"
 
 [dependencies.web-sys]
 version = "^0.3"
