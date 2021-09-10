@@ -4,7 +4,7 @@ body {
 }
 
 #hero-root {
-    background-image: url("../assets/hero-bg-plain.svg");
+    background-image: url("../assets/hero-bg.svg");
 }
 
 #hero-root a {
@@ -29,6 +29,12 @@ body {
 #hero-social a {
     border: none ;
     box-shadow: none ;
+    padding: 6px !important;
+}
+#hero-social a:hover {
+    background: #8a38e2;
+    box-shadow: none ;
+    padding: 6px !important;
 }
 
 a {
@@ -37,16 +43,18 @@ a {
 
 @media (min-width: 768px) {
     #hero-root img {
-        width: 40%;
-    }
-    .img-normal img {
-        width: 100% !important;
+        width: 65%;
     }
 }
 
-
 #hero {
-    background-image: url("../assets/hero-bg-plain.svg");
+    background-image: url("../assets/hero-bg.svg");
+}
+#wallet-root {
+     background-image: url("../assets/hero-bg-plain.svg");
+}
+.color-primary {
+    color: #130522;
 }
 .color-secondary {
     color: #00ffff;
@@ -54,44 +62,21 @@ a {
 .color-tertiary {
     color: #8a38e2;
 }
-.white {
-    color: #ffffff;
+.color-main {
+    color: #420b63;
 }
-
-.compagnon-roman {
-    font-family: "compagnonroman", "Sans-serif";
+.color-light {
+    color: #cfbae5;
 }
-.fontin-regular {
-    font-family: "fontinregular", "Sans-serif";
-}
-
-.pompiere-regular {
-    font-family: "pompiere_regular", "Sans-serif";
-    font-size: 130% !important;
-}
-
-.dadada {
-    color: #dadada;
-}
-.weight-100 {
-    font-weight: 100 !important;
-}
-.fixed-max-width-500 {
-    max-width: 500px !important;
-}
-.l-shell {
-    border-radius: none;
-    width: 360px !important;
-    height: 100vh !important;
-
-}
-
-@media (min-width: 768px) {    
-    .l-shell {
-        border: 2px solid #8a38e2;
-        box-shadow: 0 0 15px #000000;
-        height: 92vh !important;
-    }
+.shell-glow {
+	border: none !important;
+	border-radius: 30px !important;
+	box-shadow: 0 0 5px #7415ce !important;
+	text-shadow: 0 0 8px #7415ce !important;
+	background: rgba(128, 1, 255, 0.07) !important;
+	padding: 3.5% 5% !important;
+	color: #dadada !important;
+	font-size: 120% !important;
 }
 .shell-button-large {
     width: 100% !important;
@@ -99,7 +84,7 @@ a {
     border-radius: 50px !important;
     box-shadow: none !important;
     background: #6200f2 !important;
-    padding: 5% !important;
+    padding: 15px !important;
     color: #dadada !important;
     font-size: 120% !important;
 }
@@ -114,7 +99,158 @@ a {
     color: #dadada !important;
     font-size: 120% !important;
 }
-
-#shell-root {
-    background-image: url('../assets/shell-bg.svg');
+.color-glow {
+	text-shadow: 0 0 8px #7415ce !important;
 }
+.white {
+    color: #ffffff;
+}
+
+.compagnon-roman {
+    font-family: "compagnonroman", "Sans-serif";
+}
+.fontin-regular {
+    font-family: "fontinregular", "Sans-serif";
+}
+.fontin-smallcaps {
+    font-family: "fontinsmallcaps", "Sans-serif";
+}
+.sans-serif {
+    font-family: "Sans-serif";
+}
+
+.pompiere-regular {
+    font-family: "pompiere_regular", "Sans-serif";
+    font-size: 130% !important;
+}
+
+.dadada {
+    color: #dadada;
+}
+.weight-100 {
+    font-weight: 100 !important;
+}
+.font-size-150 {
+    font-size: 150% !important;
+}
+
+.dark-bg {
+    background-image: url("../assets/hero-bg-plain.svg");
+}
+.link-glow {
+    color: #00ffff !important;
+}
+.link-glow:hover {
+    color: #7415ce !important;
+}
+
+.link-glow-original:hover {
+    color: #7415ce !important;
+}
+
+
+/*WALLET */
+.lyre-shell {
+height: 100vh !important;
+}
+
+@media(min-width: 768px) {
+    .lyre-shell {
+        width: 360px !important;
+        border: 2px solid #7415ce !important;
+        box-shadow: 0 0 5px #7415ce !important;
+        text-shadow: 0 0 8px #7415ce !important;
+        background: rgba(128, 1, 255, 0.07) !important;
+        color: #dadada !important;
+        font-size: 120% !important;
+        height: 94vh !important;
+        padding: 10px;
+    }
+
+    .shell-button {
+        padding: 10px !important;
+    }
+}
+
+
+/*  Wallet nav  */
+#wallet-nav {
+
+}
+.wallet-nav-button img {
+    width: 40% !important;
+}.wallet-nav-button a:hover {
+    text-shadow: 0 0 8px #7415ce !important;
+    color: #8a38e2 !important;
+}
+
+/*LOADER   */
+
+
+.lyre-loader-gradient {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(
+        45deg, transparent, transparent 40%, #e5f403
+    );
+    animation: animate 2s linear infinite;
+}
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+.lyre-loader-gradient:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+
+.lyre-loader-gradient:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: linear-gradient(
+        45deg, transparent, transparent 40%, #e5f403
+    );
+    border-radius: 50%;
+    z-index: 1000;
+    z-index: 1;
+    filter: blur(30px);
+}
+.width-10 {
+    width: 40% !important;
+}
+
+
+.hue {
+    position: relative;
+    animation: animate 2s linear infinite;
+}
+@keyframes animate {
+    0% {
+
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+/******************/

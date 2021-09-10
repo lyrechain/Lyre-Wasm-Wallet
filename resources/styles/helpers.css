@@ -207,3 +207,6 @@
 .max-500p {
     max-width: 500px !important;
 }
+.bg-white {
+    background: #ffffff !important;
+}
