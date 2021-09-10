@@ -35,27 +35,32 @@
        id="stop2"
        stop-color="#4f0754"
        offset="0"
-       style="stop-color:#4b346c;stop-opacity:1" />
+       style="stop-color:#150217;stop-opacity:1" />
     <stop
        id="stop6"
        stop-color="#2a0635"
        offset=".17678614"
-       style="stop-color:#322962;stop-opacity:1" />
+       style="stop-color:#100214;stop-opacity:1" />
     <stop
        id="stop8"
        stop-color="#20062d"
        offset=".43467355"
-       style="stop-color:#24275f;stop-opacity:1" />
+       style="stop-color:#15051e;stop-opacity:1" />
     <stop
        id="stop10"
        stop-color="#130522"
        offset=".64409029"
-       style="stop-color:#644498;stop-opacity:1" />
+       style="stop-color:#0e021c;stop-opacity:1" />
+    <stop
+       id="stop12"
+       stop-color="#130522"
+       offset=".84094781"
+       style="stop-color:#13091e;stop-opacity:1" />
     <stop
        id="stop14"
        stop-color="#130522"
        offset="1"
-       style="stop-color:#7e4395;stop-opacity:1" />
+       style="stop-color:#13081f;stop-opacity:1" />
   </linearGradient>
   <path
      id="path17"

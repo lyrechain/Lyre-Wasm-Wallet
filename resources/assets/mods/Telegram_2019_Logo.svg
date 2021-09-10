@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg13"
+   sodipodi:docname="Telegram_2019_Logo.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs17" />
+  <sodipodi:namedview
+     id="namedview15"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="5.77"
+     inkscape:cx="50"
+     inkscape:cy="50"
+     inkscape:window-width="1366"
+     inkscape:window-height="722"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg13" />
+  <linearGradient
+     id="a"
+     gradientUnits="userSpaceOnUse"
+     x1="46"
+     x2="29"
+     y1="11"
+     y2="52">
+    <stop
+       offset="0"
+       stop-color="#2aabee"
+       id="stop2" />
+    <stop
+       offset="1"
+       stop-color="#229ed9"
+       id="stop4" />
+  </linearGradient>
+  <g
+     transform="scale(1.4453697)"
+     id="g11">
+    <circle
+       cx="34.599998"
+       cy="34.599998"
+       fill="url(#a)"
+       r="34.599998"
+       id="circle7"
+       style="fill:#00ffff" />
+    <path
+       d="m47.8 20.5s3.6-1.4 3.3 2c-.1 1.4-1 6.3-1.7 11.6l-2.4 15.7s-.2 2.3-2 2.7-4.5-1.4-5-1.8c-.4-.3-7.5-4.8-10-7-.7-.6-1.5-1.8.1-3.2l10.5-10c1.2-1.2 2.4-4-2.6-.6l-14 9.5s-1.6 1-4.6.1l-6.5-2s-2.4-1.5 1.7-3c10-4.7 22.3-9.5 33.2-14z"
+       fill="#2b002b"
+       id="path9" />
+  </g>
+</svg>
