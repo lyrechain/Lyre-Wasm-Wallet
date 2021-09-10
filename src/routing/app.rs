@@ -57,20 +57,16 @@ impl From<&Route> for ViewBuilder<HtmlElement> {
     fn from(route: &Route) -> Self {
         match route {
             Route::Splash => builder! {
-                <main>
+                <div class="frow height-100 direction-column">
                     <h1>"Welcome to the splash"</h1>
-                </main>
+                </div>
             },
             Route::WalletCheckpoint => crate::pages::load_checkpoint(),
-            Route::Create => builder! {
-                <main>
-                    <h1>"Create Wallet"</h1>
-                </main>
-            },
+            Route::Create => crate::pages::keypair_ops(),
             Route::Recover => builder! {
-                <main>
+                <div class="frow height-100 direction-column">
                     <h1>"Recover wallet"</h1>
-                </main>
+                </div>
             },
         }
     }
@@ -186,7 +182,7 @@ impl Component for App {
                     let hash = hev.new_url();
                     Some(AppModel::HashChange(hash))
                 })
-                patch:children=rx.branch_filter_map(AppView::patch_page)>
+                >
                 /*<nav>
                     <ul>
                         <li class=self.route.nav_splash()>
@@ -204,12 +200,17 @@ impl Component for App {
                     </ul>
                 </nav>
                 <pre>{rx.branch_filter_map(AppView::error)}</pre>*/
-                {ViewBuilder::from(&self.route)}
+                <div id="wallet-root" class="frow row-between direction-column width-100 height-100vh background-cover p-20">
+                    <div class="frow lyre-shell height-100 items-start row-start width-100"
+                        patch:children=rx.branch_filter_map(AppView::patch_page)
+                    >
+                        {ViewBuilder::from(&self.route)}
+                    </div>
+                </div>
             </slot>
         }
     }
 }
-
 #[cfg(test)]
 mod test_route_try_from {
     use super::*;

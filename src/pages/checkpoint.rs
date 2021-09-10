@@ -1,4 +1,5 @@
 use mogwai::prelude::*;
+use web_sys::HtmlInputElement;
 
 use crate::{
     pages::{github_icon, mail_icon, telegram_icon, twitter_icon},
@@ -6,26 +7,61 @@ use crate::{
 };
 
 pub fn load_checkpoint() -> ViewBuilder<HtmlElement> {
+    let (tx, rx) = txrx();
+
     builder! {
-    <section id="shell-root" class="frow height-100vh background-cover  p-20">
-      <div class="l-shell frow  row-center width-100 fixed-max-width-368">
-        <div class="frow img-normal col-md-4-8 width-100 image-40">
-          <img src="assets/Lyre-Chain-Horizontal-Tokens.png" alt="" srcset="" />
+      <div class = "frow" >
+      <div class="frow width-100 row-center">
+            <div class="frow width-50">
+                <div class="frow">
+                    <img src="assets/LyreChain-Logo-Full.svg" alt="" srcset="" />
+                </div>
+            </div>
         </div>
-        <div class="frow mt-20 mb-20 text-left row-start">
-          <h1 class="compagnon-roman white">"The Community Micro-Savings"</h1>
-          <h1 class="compagnon-roman white">"De-Fi Bank"</h1>
+        <div class="frow direction-column row-center width-100">
+            <div class="frow width-80">
+                <img src="assets/Lyre-Tokens-horizontal.png" alt="" srcset="" />
+            </div>
         </div>
-        <div class="frow width-100 text-center">
-          <a href=String::from(Route::Create) class="shell-button-large fontin-regular">"Register with Email"</a>
+        <div class="frow mb-20 p-10 text-left row-center">
+            <h1 class="compagnon-roman color-glow color-tertiary">"The Community De-Fi Bank"</h1>
         </div>
+        <div class="frow">
+            <div class="frow width-100 mb-20 text-center">
+                <a href=String::from(Route::Create) class="shell-button-large fontin-regular" on:click=tx.contra_map(|_:
+                    &Event| {
+                      //pubkey()
+                    })>"Create Wallet"</a>
+            </div>
 
-        <div class="frow width-100 mt-10 row-between mb-20">
-          <a href=String::from(Route::WalletCheckpoint) class="shell-button module module-border-wrap frow fontin-regular mr-5">"Seed Phrase"</a>
-          <a href=String::from(Route::Recover) class="frow shell-button fontin-regular ml-5">"Peer Recovery"</a>
+            <div class="frow width-100 mt-10 row-between mb-20">
+                <a href=String::from(Route::WalletCheckpoint)
+                    class="shell-button module module-border-wrap frow fontin-regular mr-5">"Seed Phrase"</a>
+                <a href=String::from(Route::Recover) class="frow shell-button fontin-regular ml-5">"Peer Recovery"</a>
+            </div>
         </div>
-
       </div>
-    </section>
+    }
+}
+
+use ed25519_dalek::Keypair;
+use ed25519_dalek::Signature;
+use log::{trace, Level};
+use rand::rngs::OsRng;
+
+pub(crate) fn pubkey() -> Keypair {
+    let mut csprng = OsRng {};
+    let keypair: Keypair = Keypair::generate(&mut csprng);
+
+    trace!("{:?}", &keypair);
+
+    keypair
+}
+
+pub(crate) fn build_key() -> ViewBuilder<HtmlElement> {
+    builder! {
+      <div class="frow">
+        { format!("{:?}", pubkey()) }
+    </div>
     }
 }
